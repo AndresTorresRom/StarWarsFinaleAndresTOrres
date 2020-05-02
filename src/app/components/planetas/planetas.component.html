@@ -1,0 +1,23 @@
+<div class="contentContainer">
+    <h1>{{title}}</h1>
+    <br>
+    <input #search type="text" name="search" placeholder="Search Here Jedi..." (keyup.enter)="onFindPlanet(search.value)"/>
+    <br>
+
+    <div *ngIf="names.length == 0"
+        class="loading">
+        Cargando...
+    </div>
+
+    <div *ngIf="names.length > 0">
+        <div class="infoContainer">
+            <h2>{{planet.name}}</h2>
+            <hr>        
+            <b><p>Periodo de Rotacion: {{planet.rotation_period}}</p></b>
+            <b><p>Periodo de Orbita: {{planet.orbital_period}}</p></b>
+            <b><p>Diametro: {{planet.diameter}}</p></b>
+            <b><p>Clima: {{planet.climate}}</p></b>
+            <b><p>Gravedad: {{planet.gravity}}</p></b>
+        </div>
+    </div>  
+</div>

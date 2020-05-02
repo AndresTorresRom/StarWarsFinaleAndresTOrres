@@ -1,0 +1,27 @@
+<div class="contentContainer">
+    <h1>{{title}}</h1>
+    <br>
+    <br>
+    <input #search type="text" name="search" placeholder="Search Here Jedi..." (keyup.enter)="onFindStarship(search.value)"/>
+    <br>
+
+    <div *ngIf="names.length == 0"
+        class="loading">
+        Buscando mi joven jedi
+    </div>
+
+    <div *ngIf="names.length > 0">
+        <br>
+        <br>
+        <br>
+        <div class="infoContainer">
+            <h2>{{starship.name}}</h2>
+            <hr>        
+            <b><p>Modelo: {{starship.model}}</p></b>
+            <b><p>Creada: {{starship.manufacturer}}</p></b>
+            <b><p>Tripulacion: {{starship.crew}}</p></b>
+            <b><p>Longitud: {{starship.length}}</p></b>
+            <b><p>Consumables: {{starship.consumables}}</p></b>
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,23 @@
+<div class="contentContainer">
+    <h1>{{title}}</h1>
+    <br>
+    <input #search type="text" name="search" placeholder="Search Here Jedi..." (keyup.enter)="onFindSpecie(search.value)"/>
+    <br>
+
+    <div *ngIf="names.length == 0"
+        class="loading">
+        Cargando...
+    </div>
+
+    <div *ngIf="names.length > 0">
+        <div class="infoContainer">
+            <h2>{{specie.name}}</h2>
+            <hr>        
+            <b><p>Lenguaje: {{specie.language}}</p></b>
+            <b><p>Clasificacion: {{specie.classification}}</p></b>
+            <b><p>Promedio de Altura: {{specie.average_height}}</p></b>
+            <b><p>Designacion: {{specie.designation}}</p></b>
+            <b><p>Esperanza de Vida: {{specie.average_lifespan}}</p></b>
+        </div>
+    </div>  
+</div>

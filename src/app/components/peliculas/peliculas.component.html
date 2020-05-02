@@ -1,0 +1,28 @@
+<div class="contentContainer">
+    <h1>{{title}}</h1>
+    <br>
+    <br>
+
+    <input #search type="text" name="search" placeholder="Search Here Jedi..." (keyup.enter)="onFindMovie(search.value)"/>
+    <br>
+
+    <div *ngIf="names.length == 0"
+        class="loading">
+        Cargando...
+    </div>
+
+    <div *ngIf="names.length > 0">
+        <br>
+        <br>
+        <br>
+        <div class="infoContainer">
+            <h2>{{movie.title}}</h2>
+            <hr>        
+            <b><p>Id del Episodio: {{movie.episode_id}}</p></b>
+            <b><p>Sipnosis: {{movie.opening_crawl}}</p></b>
+            <b><p>Director: {{movie.director}}</p></b>
+            <b><p>Productor: {{movie.producer}}</p></b>
+            <b><p>Fecha de Salida: {{movie.release_date}}</p></b>
+        </div>
+    </div>  
+</div>
